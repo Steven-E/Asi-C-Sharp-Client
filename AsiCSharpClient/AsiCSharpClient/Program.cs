@@ -9,65 +9,21 @@ namespace AsiCSharpClient
         private static CancellationTokenSource cancellationTokenSource;
 
         private static IImisClient imisClient;
-
+        private static string appUserName = "";
+        private static string appPassword = "";
+        private static string targetImisAddress = "";
 
         public static int Main(string[] args)
         {
             cancellationTokenSource = new CancellationTokenSource();
 
-            imisClient = new ImisClient(cancellationTokenSource);
-
+            imisClient = new ImisClient(cancellationTokenSource, targetImisAddress, appUserName, appPassword);
 
             Task.Delay(500).Wait();
 
             imisClient.Run(null, null);
-            //Task.Run(async () =>
-            // {
 
-            //     var isClientAuthenticated = imisClient.Authenticate();
-
-            //     Console.WriteLine($"Client Succesfully authenticated: {isClientAuthenticated}");
-
-            //     if (isClientAuthenticated)
-            //     {
-            //         //var cont = Console.ReadKey().Key == ConsoleKey.Enter;
-
-                     
-
-            //         imisClient.GetPartys();
-
-            //         await Task.Delay(1000);
-
-            //         imisClient.GetInvoiceSummarys();
-
-            //         await Task.Delay(1000);
-
-            //         imisClient.GetParty101();
-
-            //         await Task.Delay(1000);
-            //     }
-
-            // });
-
-            return ListenForExit().Result;
-
-            ////Console.WriteLine("Hello World!");
-
-            //HttpClientHandler clientHandler = new HttpClientHandler();
-            //clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-
-            //clientBase = new ApiClientBase(cancellationTokenSource);
-
-            //httpClient = new HttpClient(clientHandler)
-            //{
-            //    BaseAddress = new Uri("")//config.TargetImisBaseAddress
-            //};
-
-            //ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-
-            //httpClient.DefaultRequestHeaders.Accept.Clear();
-
-            //httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            return ListenForExit().Result;            
         }
 
         public static async Task<int> ListenForExit() 

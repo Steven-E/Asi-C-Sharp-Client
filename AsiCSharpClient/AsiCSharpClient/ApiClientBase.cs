@@ -1,10 +1,8 @@
-﻿using AsiCSharpClient.RequestHandlers;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,10 +16,10 @@ namespace AsiCSharpClient
         protected Dictionary<string, string> DefaultHeaders = new Dictionary<string, string>();
         protected HttpClient httpClient;
 
-        public ApiClientBase(CancellationTokenSource cancellationTokenSource)
+        public ApiClientBase(CancellationTokenSource cancellationTokenSource, string targetUrl)
         {
             this.cancellationTokenSource = cancellationTokenSource;
-            baseTargetUrl = new Uri("https://tenant1.i100/imisMain100/"); //Config.TargetImisBaseAddress
+            baseTargetUrl = new Uri(targetUrl); 
         }
 
         public async Task<ResponseWrapper> SendRestRequest(RequestWrapper request)
@@ -91,10 +89,8 @@ namespace AsiCSharpClient
                 else
                     requestUri.Query = queryToAppend;
             }
-
             return requestUri.Uri;
         }
-
     }
 
     public interface IApiClientBase

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OjwhKY6DJpUicHLEaf/c1nyR/wcGe6w8+ZrpBcISJxKj4E4FoXLte2Fels3fAZnUkj9iawcKWjTBwfg16QeMDg==",
+  "dgSpecHash": "mJVFJT2KjvpaUUTF/MNf9K0fUq/9uDqLrFckskqw98CjVBlA0o16KKlFYo3K4Nb6NHUvWy6CWQrsMUq2BY6Daw==",
   "success": true,
   "projectFilePath": "C:\\Users\\setienne\\source\\repos\\AsiCSharpClient\\Asi-C-Sharp-Client\\AsiCSharpClient\\AsiCSharpClient\\AsiCSharpClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\setienne\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

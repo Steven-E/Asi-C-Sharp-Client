@@ -7,3 +7,5 @@
 AsiCSharpClient/AsiCSharpClient/obj
 AsiCSharpClient/.vs
 
+*.user
+*.cache
